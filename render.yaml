@@ -8,6 +8,8 @@ services:
     mountPath: /var/lib/ghost/content
     sizeGB: 10 #Feel free to change this to suit your needs.
   envVars:
+    - key: security__staffDeviceVerification
+      value: false
     - key: database__client
       value: mysql
     - key: database__connection__host
