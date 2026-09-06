@@ -8,6 +8,10 @@ services:
     mountPath: /var/lib/ghost/content
     sizeGB: 10 #Feel free to change this to suit your needs.
   envVars:
+    # Ghost's canonical URL. Must be the custom domain, not RENDER_EXTERNAL_URL:
+    # since 6.62 the admin API rejects logins whose Origin doesn't match this.
+    - key: url
+      value: https://ghost.dienakakim.net
     - key: security__staffDeviceVerification
       value: false
     - key: database__client
